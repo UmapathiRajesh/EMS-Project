@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
-import { ServiceService } from '../service/service.service';
+
+
 
 @Component({
   selector: 'app-register',
@@ -10,7 +10,7 @@ import { ServiceService } from '../service/service.service';
 })
 export class RegisterComponent implements OnInit {
 
-  constructor(private data1:ServiceService, private route: Router) { }
+  // constructor(private data1:ServiceService, private route: Router) { }
 
   regForm=new FormGroup({
     uname:new FormControl("",[Validators.required,Validators.pattern('^[a-zA-Z ]+$')]),
@@ -48,13 +48,11 @@ export class RegisterComponent implements OnInit {
     localStorage.setItem('Password',b)
     
     this.regForm.reset()
-    this.route.navigate(["login"])
+    // this.route.navigate(["login"])
   }
   
-    
-  
     ngOnInit(): void {
-      this.value=this.data1.matching()
+    //   this.value=this.data1.matching()
     }
   
 }
