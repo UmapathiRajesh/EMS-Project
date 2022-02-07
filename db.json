@@ -1,0 +1,21 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "name": "gsasajs",
+      "age": 23,
+      "job": "developer",
+      "salary": 24000
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}
