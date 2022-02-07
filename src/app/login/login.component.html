@@ -1,0 +1,17 @@
+<p> login works!</p>
+<div class="container">
+    <div class="col-rem-5">
+        <form [formGroup]="login" (ngSubmit)="submit()">
+            <div class="form-group">
+                <label for="exampleInputEmail1">Email </label>
+                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" formControlName="umail">
+                <span style="color: red;" *ngIf="umail?.invalid && umail?.touched">Enter Valid Email</span> </div>
+            <div class="form-group">
+                <label for="exampleInputPassword1">Password</label>
+                <input type="password" class="form-control" id="exampleInputPassword1" formControlName="upass" required> <span style="color: red;" *ngIf="upass?.invalid && upass?.touched">Enter Valid password</span>
+            </div>
+
+            <button [disabled]="login.invalid" type="submit" class="btn btn-primary btn-lg btn-block">Login</button>
+        </form>
+    </div>
+</div>
