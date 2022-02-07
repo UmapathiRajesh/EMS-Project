@@ -1,1 +1,31 @@
 <p>signin works!</p>
+<div class="container">
+    <div class="col-rem-6">
+        <p>Sign in to your account</p>
+        <form [formGroup]="signup" (ngSubmit)="submit()">
+            <div>
+                <div class="form-group ">
+                    <label for="exampleInputEmail1 ">Email address</label>
+                    <input name="email" type=" email" class="form-control " id="exampleInputEmail1 " placeholder="Enter your email address... " aria-describedby="emailHelp " formControlName="umail" required>
+                    <span style="color: red;" *ngIf="umail?.invalid &&umail?.touched">Enter Valid Email</span>
+                </div>
+
+                <div class=" form-group ">
+                    <label for="exampleInputPassword1 ">Password
+                        <a href=" " style="margin-left: 250px;color: blue;font-weight:20px ; ">Forgot password?</a>
+                    </label>
+                    <input name="pass " type="password " class="form-control " placeholder="Enter your password... " formControlName="upass" required>
+                    <span style="color: red;" *ngIf="upass?.invalid && upass?.touched">Enter valid password...</span>
+                </div>&nbsp;
+                <button type="submit" class="btn btn-success btn-lg btn-block" style="height: 65px;">Sign in</button>
+
+            </div>
+
+
+
+        </form>
+        <div class="last ">
+            <small>New user? <a href="">Create an account.</a></small>
+        </div>
+
+    </div>
