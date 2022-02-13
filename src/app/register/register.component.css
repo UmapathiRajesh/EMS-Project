@@ -1,54 +1,187 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 26px;
+    font-weight: 600;
+    color: #111111;
+    background: #e1eaf3;
+}
+
+.wrapper {
+    margin: 0 auto;
+    width: 100%;
+    max-width: 2000px;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
 .container {
-    background-color: #007bff;
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    /* height: 600px; */
+    display: flex;
+    background: #ffffff;
+    box-shadow: 0 0 5px #999999;
 }
 
-input.ng-invalid.ng-touched {
-    border: 1px solid red;
+.login .col-left,
+.login .col-right {
+    padding: 30px;
+    display: flex;
 }
 
-input {
-    background-color: whitesmoke;
-    height: 45px;
+.login .col-left {
+    width: 60%;
+    clip-path: polygon(0 0, 0% 100%, 100% 0);
+    background: #44c7f5;
 }
 
-form {
-    border: 1px white solid;
-    padding: 20px;
-    width: 450px;
-    box-shadow: 0px 0px 5px white;
-    margin-top: 100px;
-    background-color: white;
-    margin: auto;
-    margin-top: 30px;
-    border-radius: 5px;
+.login .col-right {
+    padding: 60px 30px;
+    width: 50%;
+    margin-left: -10%;
 }
 
-.col-rem-6 {
-    border: 0px solid black;
-    background-color: #15569b;
-    height: 800px;
-    margin-left: 270px;
-    margin-top: 10px;
-    margin-bottom: 80px;
-    position: fixed;
-    width: 590px;
+@media(max-width: 575px) {
+    .login .container {
+        flex-direction: column;
+        box-shadow: none;
+    }
+    .login .col-left,
+    .login .col-right {
+        width: 100%;
+        margin: 0;
+        clip-path: none;
+    }
+    .login .col-right {
+        padding: 30px;
+    }
 }
 
-p {
-    color: white;
-    font-size: x-large;
-    text-align: center;
+.login .login-text {
+    position: relative;
+    width: 100%;
+    color: #ffffff;
 }
 
-small {
-    color: rgba(5, 5, 5, 0.671);
-    font-size: medium;
-    text-align: center;
+.login .login-text h2 {
+    margin: 0 0 15px 0;
+    font-size: 30px;
+    font-weight: 700;
+}
+
+.login .login-text p {
+    margin: 0 0 20px 0;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 22px;
+}
+
+.login .login-text .btn {
+    display: inline-block;
+    padding: 7px 20px;
+    font-size: 16px;
+    letter-spacing: 1px;
+    text-decoration: none;
+    border-radius: 30px;
+    color: #ffffff;
+    outline: none;
+    border: 1px solid #ffffff;
+    box-shadow: inset 0 0 0 0 #ffffff;
+    transition: .3s;
+}
+
+.login .login-text .btn:hover {
+    color: #44c7f5;
+    box-shadow: inset 150px 0 0 0 #ffffff;
+}
+
+.login .login-form {
+    position: relative;
+    width: 100%;
+}
+
+.login .login-form h2 {
+    margin: 0 0 15px 0;
+    font-size: 22px;
+    font-weight: 700;
+}
+
+.login .login-form p {
+    margin: 0 0 10px 0;
+    text-align: left;
+    color: #666666;
+    font-size: 15px;
+}
+
+.login .login-form p:last-child {
+    margin: 0;
+    padding-top: 3px;
+}
+
+.login .login-form p a {
+    color: #44c7f5;
+    font-size: 18px;
+    text-decoration: none;
     margin-left: 80px;
 }
 
-label {
-    color: black;
-    font-weight: 600;
-    font-size: 19px;
+.login .login-form label {
+    display: block;
+    width: 100%;
+    margin-bottom: 2px;
+    letter-spacing: .5px;
+}
+
+.login .login-form p:last-child label {
+    width: 60%;
+    float: left;
+}
+
+.login .login-form label span {
+    color: #ff574e;
+    padding-left: 2px;
+}
+
+.login .login-form input {
+    display: block;
+    width: 100%;
+    height: 50px;
+    padding: 0 10px;
+    outline: none;
+    border: 1px solid #cccccc;
+    border-radius: 30px;
+}
+
+.login .login-form input:focus {
+    border-color: #ff574e;
+}
+
+.login .login-form button {
+    display: inline-block;
+    width: 100%;
+    max-width: 270px;
+    height: 100%;
+    height: 50px;
+    letter-spacing: 1px;
+    cursor: pointer;
+    background: transparent;
+    border: 1px solid #44c7f5;
+    border-radius: 30px;
+    box-shadow: inset 0 0 0 0 #44c7f5;
+    transition: .3s;
+    margin-left: 30px;
+}
+
+.login .login-form button:hover {
+    color: #ffffff;
+    box-shadow: inset 250px 0 0 0 #44c7f5;
 }

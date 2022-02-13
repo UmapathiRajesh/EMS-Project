@@ -14,7 +14,6 @@ export class RegisterComponent implements OnInit {
 
   regForm=new FormGroup({
     uname:new FormControl("",[Validators.required,Validators.pattern('^[a-zA-Z ]+$')]),
-    usname:new FormControl("",[Validators.required,Validators.pattern('^[a-zA-Z ]+$')]),
     umail:new FormControl("",[Validators.required, Validators.pattern("^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$")]),
     
     upass:new FormControl("",[Validators.required,Validators.minLength(6),Validators.maxLength(12)]),
@@ -42,13 +41,33 @@ export class RegisterComponent implements OnInit {
   }
   submit(){
     console.log(this.regForm.value)
-    const a=this.regForm.value.umail;
-    localStorage.setItem('Mail-Id',a)
-    const b=this.regForm.value.upass;
-    localStorage.setItem('Password',b)
+
+    const a=this.regForm.value.umail; 
+
+
+
     
+    // localStorage.setItem('Mail-Id',a)
+    const b=this.regForm.value.upass;
+    // localStorage.setItem('Password',b)
+    let userData=new Array();
+    userData=JSON.parse(localStorage.getItem('users'))?JSON.parse(localStorage.getItem('users')):[]
+if(userData.some((v)=>{console.log(a); return v.umail===a}))
+{
+  
+  alert("Duplicate data!!! Please try with another name");
+}
+else
+{
+  
+  alert('Successfully logged in!!!')
+  userData.push(
+this.regForm.value
+  )
+localStorage.setItem("users",JSON.stringify(userData));
+}
     this.regForm.reset()
-    this.route.navigate(["login"])
+    this.route.navigate(["signin"])
   }
   
     
